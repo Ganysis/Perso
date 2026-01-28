@@ -534,6 +534,18 @@ def generate_report(reponses: dict, top_n: int = 5) -> str:
         report.append(f"🏦 Capital requis: {business['capital_requis']}")
         report.append(f"📈 Scalabilité: {'⭐' * business['scalabilite']}{'☆' * (5 - business['scalabilite'])}")
 
+        # === MÉTRIQUES DE DIFFICULTÉ ===
+        if "difficulte" in business:
+            diff = business["difficulte"]
+            report.append("")
+            report.append("📊 Difficulté réaliste:")
+            report.append(f"   • Prospection: {'🟢' if diff['prospection'] <= 2 else '🟡' if diff['prospection'] <= 3 else '🔴'} ({diff['prospection']}/5) - 1er client: {diff['temps_premier_client']}")
+            report.append(f"   • Conversion: {diff['conversion']} des prospects")
+            report.append(f"   • Concurrence: {'🟢' if diff['concurrence'] <= 2 else '🟡' if diff['concurrence'] <= 3 else '🔴'} ({diff['concurrence']}/5)")
+            report.append(f"   • Barrière entrée: {'🟢' if diff['barriere_entree'] <= 2 else '🟡' if diff['barriere_entree'] <= 3 else '🔴'} ({diff['barriere_entree']}/5)")
+            if "note" in diff:
+                report.append(f"   💡 {diff['note']}")
+
         if resultat["raisons_positives"]:
             report.append("")
             report.append("✅ Points forts pour vous:")

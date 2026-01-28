@@ -33,11 +33,22 @@ BUSINESS_MODELS = {
         "description": "Prestations de développement web/mobile pour des clients",
         "revenus_potentiels": "4 000 - 12 000€ CA/mois",
         "revenus_median": "6 500€ CA/mois",
-        "ca_objectif_5k_net": "8 500€ CA/mois",  # Pour 5k€ NET en SAS
-        "temps_objectif_5k": "4-10 mois",  # Pour atteindre 8.5k CA = 5k NET
+        "ca_objectif_5k_net": "8 500€ CA/mois",
+        "temps_objectif_5k": "4-10 mois",
         "capital_requis": "0 - 500€",
         "scalabilite": 2,
-        "realisme": 5,  # 1-5, 5 = très réaliste
+        "realisme": 5,
+        # === MÉTRIQUES DE DIFFICULTÉ ===
+        "difficulte": {
+            "prospection": 2,          # 1-5 (1=facile, 5=très dur)
+            "conversion": "20-35%",     # Taux de conversion prospects→clients
+            "temps_premier_client": "2-6 semaines",
+            "concurrence": 4,          # 1-5 (1=faible, 5=saturé)
+            "barriere_entree": 3,      # 1-5 (1=accessible, 5=expertise rare)
+            "complexite_vente": 2,     # 1-5 (1=simple, 5=vente complexe)
+            "cycle_vente": "1-2 semaines",
+            "note": "Plateformes (Malt) facilitent la prospection. Concurrence forte mais demande aussi."
+        },
         "competences_requises": ["Développement web/mobile"],
         "competences_bonus": ["Gestion de projet", "Vente/Négociation"],
         "modele_revenu": "Prestations de service (freelance, consulting)",
@@ -85,6 +96,17 @@ BUSINESS_MODELS = {
         "capital_requis": "0 - 1 000€",
         "scalabilite": 3,
         "realisme": 5,
+        # === MÉTRIQUES DE DIFFICULTÉ ===
+        "difficulte": {
+            "prospection": 3,          # PME cherchent mais beaucoup d'offres
+            "conversion": "15-25%",     # Doit prouver expertise
+            "temps_premier_client": "3-8 semaines",
+            "concurrence": 4,          # Marché mature, beaucoup de freelances
+            "barriere_entree": 2,      # Certifications accessibles
+            "complexite_vente": 3,     # Doit montrer résultats passés
+            "cycle_vente": "2-4 semaines",
+            "note": "Concurrence forte. Se différencier par niche (e-commerce, SaaS, local) ou résultats prouvés."
+        },
         "competences_requises": ["Marketing digital/SEO/Ads"],
         "competences_bonus": ["Rédaction/Copywriting", "Vente/Négociation"],
         "modele_revenu": "Prestations de service (freelance, consulting)",
@@ -229,6 +251,17 @@ BUSINESS_MODELS = {
         "capital_requis": "500 - 2 000€",
         "scalabilite": 3,
         "realisme": 5,
+        # === MÉTRIQUES DE DIFFICULTÉ ===
+        "difficulte": {
+            "prospection": 3,          # Réseau local + Google = sources
+            "conversion": "15-25%",     # Beaucoup de devis, peu signent
+            "temps_premier_client": "4-10 semaines",
+            "concurrence": 5,          # TRÈS concurrentiel (Wix, agences, freelances)
+            "barriere_entree": 2,      # WordPress/Webflow accessibles
+            "complexite_vente": 3,     # Clients non-tech = pédagogie
+            "cycle_vente": "2-6 semaines",
+            "note": "Marché saturé mais demande constante. Se différencier: niche (resto, artisans) ou service premium."
+        },
         "competences_requises": ["Développement web/mobile"],
         "competences_bonus": ["Design graphique/UI-UX", "Vente/Négociation"],
         "modele_revenu": "Prestations de service (freelance, consulting)",
@@ -276,6 +309,17 @@ BUSINESS_MODELS = {
         "capital_requis": "0 - 1 000€",
         "scalabilite": 3,
         "realisme": 5,
+        # === MÉTRIQUES DE DIFFICULTÉ ===
+        "difficulte": {
+            "prospection": 3,          # PME ne savent pas qu'elles ont besoin → éducation
+            "conversion": "15-25%",     # Bonne conversion si prospect qualifié
+            "temps_premier_client": "4-8 semaines",
+            "concurrence": 2,          # Encore faible en France 2026
+            "barriere_entree": 2,      # Outils accessibles, pas besoin de coder
+            "complexite_vente": 3,     # Doit expliquer la valeur
+            "cycle_vente": "2-4 semaines",
+            "note": "Marché éducation: les PME ne cherchent pas, il faut les trouver. LinkedIn + cold email efficaces."
+        },
         "competences_requises": [],
         "competences_bonus": ["Développement web/mobile", "Résolution de problèmes"],
         "modele_revenu": "Prestations de service (freelance, consulting)",
@@ -301,6 +345,17 @@ BUSINESS_MODELS = {
         "capital_requis": "0 - 2 000€",
         "scalabilite": 4,
         "realisme": 4,
+        # === MÉTRIQUES DE DIFFICULTÉ ===
+        "difficulte": {
+            "prospection": 4,          # Vente technique, doit éduquer le marché
+            "conversion": "8-15%",      # Projets complexes = cycle long
+            "temps_premier_client": "6-12 semaines",
+            "concurrence": 1,          # Très peu de gens qualifiés
+            "barriere_entree": 4,      # Nécessite vraies compétences dev
+            "complexite_vente": 4,     # Doit expliquer, rassurer, démontrer
+            "cycle_vente": "3-6 semaines",
+            "note": "Barrière technique = protection. Mais prospection difficile car marché immature."
+        },
         "competences_requises": ["Développement web/mobile"],
         "competences_bonus": ["Marketing digital/SEO/Ads", "Résolution de problèmes"],
         "modele_revenu": "Prestations de service (freelance, consulting)",
@@ -350,6 +405,17 @@ BUSINESS_MODELS = {
         "capital_requis": "0 - 1 500€",
         "scalabilite": 3,
         "realisme": 5,
+        # === MÉTRIQUES DE DIFFICULTÉ ===
+        "difficulte": {
+            "prospection": 3,          # DRH cherchent activement
+            "conversion": "20-35%",     # OPCO = budget déjà alloué
+            "temps_premier_client": "4-8 semaines",
+            "concurrence": 2,          # Peu de formateurs IA crédibles
+            "barriere_entree": 3,      # Qualiopi via partenaire, sinon crédibilité
+            "complexite_vente": 2,     # Budget formation = process connu
+            "cycle_vente": "3-6 semaines",
+            "note": "OPCO = budget déjà prévu. Qualiopi obligatoire mais partenariat possible. LinkedIn très efficace."
+        },
         "competences_requises": ["Pédagogie/Transmission", "Communication/Prise de parole"],
         "competences_bonus": ["Développement web/mobile"],
         "modele_revenu": "Prestations de service (freelance, consulting)",
