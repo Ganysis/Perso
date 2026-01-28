@@ -1,12 +1,24 @@
 """
 Base de données RÉALISTE des modèles de business rentables.
 Fourchettes conservatrices, pas de hype.
-Objectifs: 5k€ puis 8k€ net/mois
+
+=== OBJECTIFS NET EN SAS ===
+- Objectif 1: 5 000€ NET/mois (en poche après charges)
+- Objectif 2: 8 000€ NET/mois (5k vous + 3k assistant)
+
+=== CALCUL NET SAS ===
+Pour 5k€ NET en SAS (mix salaire+dividendes optimal):
+- CA nécessaire: ~8 500 - 10 000€/mois
+- Charges sociales président: ~45% du salaire brut
+- Flat tax dividendes: 30%
+- IS sur bénéfices: 25%
+
+Les revenus affichés sont en CA (chiffre d'affaires).
+Le champ "ca_objectif_5k_net" indique le CA mensuel nécessaire pour 5k€ NET.
 
 === MISE À JOUR 2026 ===
 - Ajout business IA/Automatisation (forte demande)
-- Ajout formateur IA entreprise
-- Mise à jour réalisme avec impact IA
+- Revenus corrigés CA vs NET
 - Tendances 2026 actualisées
 """
 
@@ -19,9 +31,10 @@ BUSINESS_MODELS = {
         "nom": "Développeur Freelance",
         "categorie": "Freelance",
         "description": "Prestations de développement web/mobile pour des clients",
-        "revenus_potentiels": "3 000 - 8 000€/mois",
-        "revenus_median": "4 500€/mois",
-        "temps_objectif_5k": "3-8 mois",
+        "revenus_potentiels": "4 000 - 12 000€ CA/mois",
+        "revenus_median": "6 500€ CA/mois",
+        "ca_objectif_5k_net": "8 500€ CA/mois",  # Pour 5k€ NET en SAS
+        "temps_objectif_5k": "4-10 mois",  # Pour atteindre 8.5k CA = 5k NET
         "capital_requis": "0 - 500€",
         "scalabilite": 2,
         "realisme": 5,  # 1-5, 5 = très réaliste
@@ -32,11 +45,11 @@ BUSINESS_MODELS = {
         "lieu": ["100% à domicile/remote", "Nomade digital - depuis n'importe où"],
         "visibilite": ["Modérément - je préfère rester en retrait", "Non - je veux un business anonyme/discret"],
         "risque": 1,
-        "avantages": ["Démarrage rapide", "Forte demande", "TJM 350-550€ réaliste"],
+        "avantages": ["Démarrage rapide", "Forte demande", "TJM 400-600€ réaliste senior"],
         "inconvenients": ["Échange temps/argent", "Prospection continue", "Isolement"],
         "etapes_demarrage": ["Portfolio GitHub solide", "Malt + LinkedIn actif", "3 premiers clients via réseau", "TJM progressif"],
         "ressources": ["Malt.fr", "Comet.co", "LinkedIn"],
-        "warning": "Comptez 3-6 mois pour avoir une charge stable"
+        "warning": "TJM 400€ x 17j = 6.8k CA → ~4k NET. Visez 500€+ pour 5k NET"
     },
     "freelance_design": {
         "nom": "Designer Freelance (UI/UX/Graphique)",
@@ -65,9 +78,10 @@ BUSINESS_MODELS = {
         "nom": "Consultant Marketing Digital",
         "categorie": "Freelance",
         "description": "Accompagnement en marketing digital, SEO, publicités",
-        "revenus_potentiels": "3 000 - 7 000€/mois",
-        "revenus_median": "4 000€/mois",
-        "temps_objectif_5k": "4-10 mois",
+        "revenus_potentiels": "4 000 - 10 000€ CA/mois",
+        "revenus_median": "6 000€ CA/mois",
+        "ca_objectif_5k_net": "8 500€ CA/mois",
+        "temps_objectif_5k": "5-12 mois",
         "capital_requis": "0 - 1 000€",
         "scalabilite": 3,
         "realisme": 5,
@@ -78,11 +92,11 @@ BUSINESS_MODELS = {
         "lieu": ["100% à domicile/remote", "Nomade digital - depuis n'importe où"],
         "visibilite": ["Oui, je veux être le visage de mon business", "Oui, mais uniquement sur certains canaux"],
         "risque": 1,
-        "avantages": ["Forte demande PME", "Résultats mesurables", "Récurrence possible"],
+        "avantages": ["Forte demande PME", "Résultats mesurables", "Récurrence possible (forfaits 1-2k/mois)"],
         "inconvenients": ["Devoir prouver ROI", "Clients exigeants", "Veille constante"],
-        "etapes_demarrage": ["Certifications Google/Meta", "3 études de cas réelles", "Prospection LinkedIn", "Forfaits mensuels"],
+        "etapes_demarrage": ["Certifications Google/Meta", "3 études de cas réelles", "Prospection LinkedIn", "Forfaits mensuels 1500-3000€"],
         "ressources": ["Google Skillshop", "HubSpot Academy", "Semrush"],
-        "warning": "Sans résultats prouvés, difficile de facturer plus de 500€/jour"
+        "warning": "4-5 clients à 2k€/mois = 8-10k CA → 5k NET réaliste"
     },
     "freelance_copywriter": {
         "nom": "Copywriter/Rédacteur Web",
@@ -208,9 +222,10 @@ BUSINESS_MODELS = {
         "nom": "Agence Création de Sites Web",
         "categorie": "Agence",
         "description": "Création de sites vitrines et e-commerce pour PME",
-        "revenus_potentiels": "4 000 - 10 000€/mois",
-        "revenus_median": "5 500€/mois",
-        "temps_objectif_5k": "4-10 mois",
+        "revenus_potentiels": "5 000 - 15 000€ CA/mois",
+        "revenus_median": "8 000€ CA/mois",
+        "ca_objectif_5k_net": "8 500€ CA/mois",
+        "temps_objectif_5k": "5-12 mois",
         "capital_requis": "500 - 2 000€",
         "scalabilite": 3,
         "realisme": 5,
@@ -223,9 +238,9 @@ BUSINESS_MODELS = {
         "risque": 2,
         "avantages": ["Demande locale constante", "Maintenance récurrente", "Upsell SEO/hébergement"],
         "inconvenients": ["Concurrence Wix/Squarespace", "Clients non-tech difficiles", "Scope creep"],
-        "etapes_demarrage": ["WordPress ou Webflow maîtrisé", "5 sites portfolio", "Cibler PME locales", "Pack 2000-5000€ tout inclus"],
+        "etapes_demarrage": ["WordPress ou Webflow maîtrisé", "5 sites portfolio", "Cibler PME locales", "Pack 3000-6000€ tout inclus"],
         "ressources": ["WordPress", "Webflow", "Elementor"],
-        "warning": "Ajoutez maintenance mensuelle (50-150€) pour récurrence"
+        "warning": "2 sites 4k€ + 5 maintenances 150€ = 8.75k CA → 5.1k NET"
     },
     "agence_recrutement": {
         "nom": "Cabinet de Recrutement Spécialisé",
@@ -254,8 +269,9 @@ BUSINESS_MODELS = {
         "nom": "Consultant Automatisation/IA (Make, n8n)",
         "categorie": "Agence",
         "description": "Automatisation de process avec outils no-code et IA générative",
-        "revenus_potentiels": "4 000 - 12 000€/mois",
-        "revenus_median": "6 000€/mois",
+        "revenus_potentiels": "5 000 - 15 000€ CA/mois",
+        "revenus_median": "8 000€ CA/mois",
+        "ca_objectif_5k_net": "8 500€ CA/mois",
         "temps_objectif_5k": "3-6 mois",
         "capital_requis": "0 - 1 000€",
         "scalabilite": 3,
@@ -268,18 +284,19 @@ BUSINESS_MODELS = {
         "visibilite": ["Oui, mais uniquement sur certains canaux"],
         "risque": 1,
         "tendances": ["IA Générative / Agents IA", "Automatisation business (Make, n8n, Zapier)"],
-        "avantages": ["TRÈS forte demande 2026", "Tarifs élevés (800-2000€/jour)", "PME en retard = opportunité"],
+        "avantages": ["TRÈS forte demande 2026", "TJM 800-1500€ réaliste", "PME en retard = opportunité"],
         "inconvenients": ["Outils évoluent vite", "Formation continue", "Concurrence croissante"],
         "etapes_demarrage": ["Maîtriser Make + n8n (2-4 semaines)", "Intégrer Claude/GPT dans workflows", "3 cas concrets", "Cibler PME 10-50 employés"],
         "ressources": ["Make.com", "n8n.io", "Anthropic Claude API", "OpenAI API"],
-        "warning": "Marché très porteur en 2026, mais formez-vous sérieusement"
+        "warning": "TJM 1000€ x 9j/mois = 9k CA → 5.3k NET. Très réaliste 2026."
     },
     "agent_ia_builder": {
         "nom": "Créateur d'Agents IA",
         "categorie": "Tech",
         "description": "Développement d'agents IA personnalisés pour entreprises (chatbots, assistants, automatisation)",
-        "revenus_potentiels": "5 000 - 15 000€/mois",
-        "revenus_median": "7 000€/mois",
+        "revenus_potentiels": "6 000 - 20 000€ CA/mois",
+        "revenus_median": "10 000€ CA/mois",
+        "ca_objectif_5k_net": "8 500€ CA/mois",
         "temps_objectif_5k": "4-8 mois",
         "capital_requis": "0 - 2 000€",
         "scalabilite": 4,
@@ -292,11 +309,11 @@ BUSINESS_MODELS = {
         "visibilite": ["Modérément - je préfère rester en retrait"],
         "risque": 2,
         "tendances": ["IA Générative / Agents IA", "Automatisation business (Make, n8n, Zapier)"],
-        "avantages": ["Marché explosif 2026", "Tarifs premium (3-10k€/agent)", "Récurrence maintenance", "Peu de concurrence qualifiée"],
+        "avantages": ["Marché explosif 2026", "Tarifs 5-15k€/agent", "Récurrence maintenance 500-1500€/mois", "Peu de concurrence qualifiée"],
         "inconvenients": ["Compétences techniques requises", "Technologie qui évolue vite", "Support client"],
         "etapes_demarrage": ["Maîtriser LangChain/CrewAI/AutoGen", "3 agents démo (support, vente, RH)", "Cibler PME avec process répétitifs", "Forfait création + maintenance mensuelle"],
         "ressources": ["LangChain", "CrewAI", "Claude API", "Vercel AI SDK"],
-        "warning": "Nécessite bases dev solides. Marché réel mais technique."
+        "warning": "1 agent 8k€ + 3 maintenances 500€ = 9.5k CA → 5.6k NET"
     },
     "prompt_engineer": {
         "nom": "Consultant IA / Prompt Engineer",
@@ -326,8 +343,9 @@ BUSINESS_MODELS = {
         "nom": "Formateur IA en Entreprise",
         "categorie": "Formation",
         "description": "Formations IA pour équipes (prise en main outils, bonnes pratiques, cas d'usage)",
-        "revenus_potentiels": "4 000 - 12 000€/mois",
-        "revenus_median": "6 000€/mois",
+        "revenus_potentiels": "5 000 - 15 000€ CA/mois",
+        "revenus_median": "8 000€ CA/mois",
+        "ca_objectif_5k_net": "8 500€ CA/mois",
         "temps_objectif_5k": "4-8 mois",
         "capital_requis": "0 - 1 500€",
         "scalabilite": 3,
@@ -340,11 +358,11 @@ BUSINESS_MODELS = {
         "visibilite": ["Oui, je veux être le visage de mon business"],
         "risque": 1,
         "tendances": ["IA Générative / Agents IA", "Formation professionnelle / Upskilling"],
-        "avantages": ["ÉNORME demande 2026", "1500-3000€/jour de formation", "Récurrence (nouvelles équipes)", "CPF/OPCO finançables"],
-        "inconvenients": ["Déplacements parfois", "Certification Qualiopi complexe", "Contenu à mettre à jour souvent"],
+        "avantages": ["ÉNORME demande 2026", "1500-2500€/jour réaliste", "Récurrence (nouvelles équipes)", "OPCO finançables"],
+        "inconvenients": ["Déplacements parfois", "Certification Qualiopi via partenaire", "Contenu à mettre à jour souvent"],
         "etapes_demarrage": ["Créer programme 1-2 jours", "Partenariat organisme certifié Qualiopi", "Cibler DRH/Directions", "LinkedIn + cold email"],
         "ressources": ["LinkedIn", "Organismes Qualiopi", "Supports formation"],
-        "warning": "Qualiopi indispensable pour financement entreprise. Passez par un partenaire."
+        "warning": "4 jours formation/mois à 2k€ = 8k CA → 4.7k NET. Réaliste."
     },
 
     # ============================================================

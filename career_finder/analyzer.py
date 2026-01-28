@@ -527,9 +527,11 @@ def generate_report(reponses: dict, top_n: int = 5) -> str:
         report.append(f"🏆 #{i} - {business['nom']} ({resultat['pourcentage']}% de compatibilité)")
         report.append("-" * 40)
         report.append(f"📝 {business['description']}")
-        report.append(f"💰 Revenus potentiels: {business['revenus_potentiels']}")
-        report.append(f"⏱️  Temps pour 5k€: {business['temps_objectif_5k']}")
-        report.append(f"💵 Capital requis: {business['capital_requis']}")
+        report.append(f"💰 CA potentiel: {business['revenus_potentiels']}")
+        if "ca_objectif_5k_net" in business:
+            report.append(f"💵 Pour 5k€ NET (SAS): {business['ca_objectif_5k_net']}")
+        report.append(f"⏱️  Délai 5k€ NET: {business['temps_objectif_5k']}")
+        report.append(f"🏦 Capital requis: {business['capital_requis']}")
         report.append(f"📈 Scalabilité: {'⭐' * business['scalabilite']}{'☆' * (5 - business['scalabilite'])}")
 
         if resultat["raisons_positives"]:
