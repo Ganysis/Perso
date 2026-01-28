@@ -1,0 +1,5 @@
+# Career Project Finder
+# Aucune dépendance externe requise - utilise uniquement la bibliothèque standard Python
+
+# Optionnel pour une meilleure expérience CLI:
+# rich>=13.0.0  # Interface CLI améliorée (couleurs, tableaux)
