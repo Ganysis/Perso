@@ -3,6 +3,8 @@ Questions pour identifier le meilleur projet entrepreneurial.
 Orienté création d'entreprise rentable avec objectifs :
 - Objectif 1 : 5 000€ net/mois
 - Objectif 2 : 8 000€ net/mois (5k + 3k assistant)
+
+Mise à jour 2026 - Questions approfondies pour recommandations précises.
 """
 
 QUESTIONS = {
@@ -68,6 +70,165 @@ QUESTIONS = {
                     "Modérée - objectif dans 1-2 ans",
                     "Forte - besoin de résultats sous 6-12 mois",
                     "Très forte - besoin de revenus sous 3-6 mois"
+                ]
+            }
+        ]
+    },
+
+    "contexte_personnel": {
+        "titre": "👤 Contexte Personnel (CRITIQUE)",
+        "questions": [
+            {
+                "id": "localisation",
+                "question": "Où êtes-vous situé ?",
+                "type": "choix",
+                "options": [
+                    "Paris / Île-de-France",
+                    "Grande ville (Lyon, Marseille, Bordeaux, etc.)",
+                    "Ville moyenne (50k-200k habitants)",
+                    "Petite ville (10k-50k habitants)",
+                    "Zone rurale / Village",
+                    "Étranger (francophone)",
+                    "Étranger (non francophone)"
+                ]
+            },
+            {
+                "id": "situation_familiale",
+                "question": "Quelle est votre situation familiale ?",
+                "type": "choix",
+                "options": [
+                    "Seul(e) sans enfant",
+                    "En couple sans enfant",
+                    "Seul(e) avec enfant(s)",
+                    "En couple avec enfant(s)",
+                    "Autre situation"
+                ]
+            },
+            {
+                "id": "seul_revenu",
+                "question": "Êtes-vous le seul revenu du foyer ?",
+                "type": "choix",
+                "options": [
+                    "Oui, je suis le seul revenu",
+                    "Non, mon/ma conjoint(e) a des revenus stables",
+                    "Non, nous avons d'autres sources (rentes, aides, etc.)",
+                    "Non applicable (je vis seul)"
+                ]
+            },
+            {
+                "id": "contraintes_perso",
+                "question": "Avez-vous des contraintes personnelles à prendre en compte ?",
+                "type": "multi_choix",
+                "options": [
+                    "Horaires fixes (enfants, école, etc.)",
+                    "Mobilité réduite ou handicap",
+                    "Obligations familiales (parents, etc.)",
+                    "Visa/Permis de travail limité",
+                    "Santé fragile / fatigue chronique",
+                    "Aucune contrainte particulière"
+                ]
+            }
+        ]
+    },
+
+    "experience_entrepreneuriale": {
+        "titre": "🚀 Expérience Entrepreneuriale",
+        "questions": [
+            {
+                "id": "deja_entrepris",
+                "question": "Avez-vous déjà lancé un projet entrepreneurial ?",
+                "type": "choix",
+                "options": [
+                    "Non, c'est ma première fois",
+                    "Oui, un side project (non rentable)",
+                    "Oui, un projet qui a généré des revenus",
+                    "Oui, plusieurs projets",
+                    "Oui, j'ai déjà eu une entreprise rentable"
+                ]
+            },
+            {
+                "id": "echec_passe",
+                "question": "Si vous avez déjà entrepris, qu'est-ce qui n'a pas marché ?",
+                "type": "multi_choix",
+                "options": [
+                    "Pas d'expérience passée",
+                    "Manque de temps",
+                    "Manque d'argent",
+                    "Mauvais produit/marché",
+                    "Problèmes de vente/marketing",
+                    "Problèmes techniques",
+                    "Problèmes personnels/motivation",
+                    "Associé/équipe",
+                    "Mon projet a fonctionné"
+                ]
+            },
+            {
+                "id": "vente_experience",
+                "question": "Avez-vous déjà vendu quelque chose (produit, service, à n'importe qui) ?",
+                "type": "choix",
+                "options": [
+                    "Non, jamais",
+                    "Oui, sur Leboncoin/Vinted (particulier)",
+                    "Oui, des prestations freelance",
+                    "Oui, j'ai un rôle commercial dans mon job",
+                    "Oui, je vends régulièrement (entrepreneur)"
+                ]
+            }
+        ]
+    },
+
+    "reseau_assets": {
+        "titre": "🔗 Réseau & Assets Existants",
+        "questions": [
+            {
+                "id": "reseau_linkedin",
+                "question": "Combien de contacts professionnels avez-vous (LinkedIn ou équivalent) ?",
+                "type": "choix",
+                "options": [
+                    "Moins de 100",
+                    "100 - 300",
+                    "300 - 500",
+                    "500 - 1000",
+                    "Plus de 1000"
+                ]
+            },
+            {
+                "id": "clients_potentiels",
+                "question": "Avez-vous des contacts qui pourraient devenir clients ?",
+                "type": "choix",
+                "options": [
+                    "Non, aucun",
+                    "Peut-être 1-2 personnes",
+                    "Oui, 3-5 contacts chauds",
+                    "Oui, 5-10 contacts potentiels",
+                    "Oui, plus de 10 contacts qualifiés"
+                ]
+            },
+            {
+                "id": "audience_existante",
+                "question": "Avez-vous une audience existante (email, réseaux sociaux) ?",
+                "type": "choix",
+                "options": [
+                    "Non, aucune",
+                    "Petite (moins de 500 followers/abonnés)",
+                    "Moyenne (500 - 2000)",
+                    "Grande (2000 - 10000)",
+                    "Très grande (plus de 10000)"
+                ]
+            },
+            {
+                "id": "assets_existants",
+                "question": "Avez-vous des assets existants réutilisables ?",
+                "type": "multi_choix",
+                "options": [
+                    "Portfolio/Site web personnel",
+                    "Blog avec du trafic",
+                    "Chaîne YouTube/Podcast",
+                    "Newsletter avec abonnés",
+                    "Communauté (Discord, groupe FB, etc.)",
+                    "Code/Produit technique existant",
+                    "Base de données/contacts qualifiés",
+                    "Aucun asset particulier"
                 ]
             }
         ]
@@ -283,20 +444,21 @@ QUESTIONS = {
             },
             {
                 "id": "tendances",
-                "question": "Quelles tendances vous semblent prometteuses ?",
+                "question": "Quelles tendances 2026 vous semblent prometteuses ?",
                 "type": "multi_choix",
                 "options": [
-                    "Intelligence Artificielle",
-                    "Automatisation/No-code",
-                    "Économie des créateurs",
-                    "Remote work/Outils collaboratifs",
-                    "Santé mentale/Bien-être",
-                    "Alimentation saine/Bio",
-                    "Seconde main/Économie circulaire",
-                    "Services aux seniors",
-                    "Cybersécurité",
-                    "Cryptomonnaies/Web3",
-                    "Mobilité durable"
+                    "IA Générative / Agents IA",
+                    "Automatisation business (Make, n8n, Zapier)",
+                    "Prompt Engineering / IA appliquée",
+                    "Remote work / Travail asynchrone",
+                    "Santé mentale / Bien-être",
+                    "Silver économie (seniors)",
+                    "Seconde main / Économie circulaire",
+                    "Cybersécurité / Protection données",
+                    "Formation professionnelle / Upskilling",
+                    "Services B2B externalisés",
+                    "Énergie / Rénovation énergétique",
+                    "Mobilité douce / Vélo"
                 ]
             }
         ]

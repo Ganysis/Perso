@@ -2,6 +2,12 @@
 Base de données RÉALISTE des modèles de business rentables.
 Fourchettes conservatrices, pas de hype.
 Objectifs: 5k€ puis 8k€ net/mois
+
+=== MISE À JOUR 2026 ===
+- Ajout business IA/Automatisation (forte demande)
+- Ajout formateur IA entreprise
+- Mise à jour réalisme avec impact IA
+- Tendances 2026 actualisées
 """
 
 BUSINESS_MODELS = {
@@ -99,7 +105,7 @@ BUSINESS_MODELS = {
         "inconvenients": ["Tarifs bas au début (0.10€/mot)", "Volume important", "Deadlines serrées"],
         "etapes_demarrage": ["Portfolio 5-10 textes", "Spécialisation (B2B, e-commerce, santé)", "Malt + cold email", "Augmenter tarifs progressivement"],
         "ressources": ["Redacteur.com", "Malt", "Scribeur"],
-        "warning": "Les 0.05€/mot des plateformes ne permettent pas de vivre, visez le direct"
+        "warning": "⚠️ 2026: IA impacte fortement ce métier. Spécialisez-vous en stratégie/voix de marque, pas en volume."
     },
     "freelance_video": {
         "nom": "Monteur Vidéo/Motion Designer",
@@ -245,15 +251,15 @@ BUSINESS_MODELS = {
         "warning": "Un placement tech senior = 8-15k€, mais cycle de 2-3 mois"
     },
     "automatisation_ia": {
-        "nom": "Consultant Automatisation/IA",
+        "nom": "Consultant Automatisation/IA (Make, n8n)",
         "categorie": "Agence",
-        "description": "Automatisation de process avec outils no-code et IA",
-        "revenus_potentiels": "4 000 - 10 000€/mois",
-        "revenus_median": "5 500€/mois",
-        "temps_objectif_5k": "4-8 mois",
+        "description": "Automatisation de process avec outils no-code et IA générative",
+        "revenus_potentiels": "4 000 - 12 000€/mois",
+        "revenus_median": "6 000€/mois",
+        "temps_objectif_5k": "3-6 mois",
         "capital_requis": "0 - 1 000€",
         "scalabilite": 3,
-        "realisme": 4,
+        "realisme": 5,
         "competences_requises": [],
         "competences_bonus": ["Développement web/mobile", "Résolution de problèmes"],
         "modele_revenu": "Prestations de service (freelance, consulting)",
@@ -261,12 +267,84 @@ BUSINESS_MODELS = {
         "lieu": ["100% à domicile/remote", "Nomade digital - depuis n'importe où"],
         "visibilite": ["Oui, mais uniquement sur certains canaux"],
         "risque": 1,
-        "tendances": ["Intelligence Artificielle", "Automatisation/No-code"],
-        "avantages": ["Marché en croissance", "Tarifs corrects", "Demande réelle des PME"],
-        "inconvenients": ["Outils évoluent vite", "Formation continue", "Éducation marché"],
-        "etapes_demarrage": ["Maîtriser Make/Zapier + ChatGPT", "3 automatisations démo", "Cibler PME process manuels", "Forfait 1500-3000€ + maintenance"],
-        "ressources": ["Make.com", "Zapier", "n8n", "OpenAI API"],
-        "warning": "Marché réel mais évitez les promesses 'IA magique'"
+        "tendances": ["IA Générative / Agents IA", "Automatisation business (Make, n8n, Zapier)"],
+        "avantages": ["TRÈS forte demande 2026", "Tarifs élevés (800-2000€/jour)", "PME en retard = opportunité"],
+        "inconvenients": ["Outils évoluent vite", "Formation continue", "Concurrence croissante"],
+        "etapes_demarrage": ["Maîtriser Make + n8n (2-4 semaines)", "Intégrer Claude/GPT dans workflows", "3 cas concrets", "Cibler PME 10-50 employés"],
+        "ressources": ["Make.com", "n8n.io", "Anthropic Claude API", "OpenAI API"],
+        "warning": "Marché très porteur en 2026, mais formez-vous sérieusement"
+    },
+    "agent_ia_builder": {
+        "nom": "Créateur d'Agents IA",
+        "categorie": "Tech",
+        "description": "Développement d'agents IA personnalisés pour entreprises (chatbots, assistants, automatisation)",
+        "revenus_potentiels": "5 000 - 15 000€/mois",
+        "revenus_median": "7 000€/mois",
+        "temps_objectif_5k": "4-8 mois",
+        "capital_requis": "0 - 2 000€",
+        "scalabilite": 4,
+        "realisme": 4,
+        "competences_requises": ["Développement web/mobile"],
+        "competences_bonus": ["Marketing digital/SEO/Ads", "Résolution de problèmes"],
+        "modele_revenu": "Prestations de service (freelance, consulting)",
+        "type_client": "B2B - Entreprises/Professionnels",
+        "lieu": ["100% à domicile/remote", "Nomade digital - depuis n'importe où"],
+        "visibilite": ["Modérément - je préfère rester en retrait"],
+        "risque": 2,
+        "tendances": ["IA Générative / Agents IA", "Automatisation business (Make, n8n, Zapier)"],
+        "avantages": ["Marché explosif 2026", "Tarifs premium (3-10k€/agent)", "Récurrence maintenance", "Peu de concurrence qualifiée"],
+        "inconvenients": ["Compétences techniques requises", "Technologie qui évolue vite", "Support client"],
+        "etapes_demarrage": ["Maîtriser LangChain/CrewAI/AutoGen", "3 agents démo (support, vente, RH)", "Cibler PME avec process répétitifs", "Forfait création + maintenance mensuelle"],
+        "ressources": ["LangChain", "CrewAI", "Claude API", "Vercel AI SDK"],
+        "warning": "Nécessite bases dev solides. Marché réel mais technique."
+    },
+    "prompt_engineer": {
+        "nom": "Consultant IA / Prompt Engineer",
+        "categorie": "Agence",
+        "description": "Accompagnement entreprises dans l'adoption de l'IA (formation, prompts, stratégie)",
+        "revenus_potentiels": "4 000 - 10 000€/mois",
+        "revenus_median": "5 500€/mois",
+        "temps_objectif_5k": "4-8 mois",
+        "capital_requis": "0 - 500€",
+        "scalabilite": 3,
+        "realisme": 4,
+        "competences_requises": ["Communication/Prise de parole"],
+        "competences_bonus": ["Pédagogie/Transmission", "Marketing digital/SEO/Ads"],
+        "modele_revenu": "Prestations de service (freelance, consulting)",
+        "type_client": "B2B - Entreprises/Professionnels",
+        "lieu": ["100% à domicile/remote", "Principalement à domicile avec déplacements occasionnels"],
+        "visibilite": ["Oui, je veux être le visage de mon business", "Oui, mais uniquement sur certains canaux"],
+        "risque": 1,
+        "tendances": ["IA Générative / Agents IA", "Prompt Engineering / IA appliquée", "Formation professionnelle / Upskilling"],
+        "avantages": ["Demande explosive 2026", "Peu besoin de coder", "Formations + consulting", "Entreprises perdues = opportunité"],
+        "inconvenients": ["Crédibilité à construire", "Marché va se professionnaliser", "Veille constante"],
+        "etapes_demarrage": ["Expertise Claude/GPT/Midjourney", "Certifications (si dispo)", "3 études de cas", "Cibler RH/Marketing/Direction"],
+        "ressources": ["Anthropic", "OpenAI", "LinkedIn (prospection)"],
+        "warning": "Window d'opportunité 2024-2026. Positionnez-vous vite."
+    },
+    "formateur_ia_entreprise": {
+        "nom": "Formateur IA en Entreprise",
+        "categorie": "Formation",
+        "description": "Formations IA pour équipes (prise en main outils, bonnes pratiques, cas d'usage)",
+        "revenus_potentiels": "4 000 - 12 000€/mois",
+        "revenus_median": "6 000€/mois",
+        "temps_objectif_5k": "4-8 mois",
+        "capital_requis": "0 - 1 500€",
+        "scalabilite": 3,
+        "realisme": 5,
+        "competences_requises": ["Pédagogie/Transmission", "Communication/Prise de parole"],
+        "competences_bonus": ["Développement web/mobile"],
+        "modele_revenu": "Prestations de service (freelance, consulting)",
+        "type_client": "B2B - Entreprises/Professionnels",
+        "lieu": ["100% à domicile/remote", "Principalement à domicile avec déplacements occasionnels"],
+        "visibilite": ["Oui, je veux être le visage de mon business"],
+        "risque": 1,
+        "tendances": ["IA Générative / Agents IA", "Formation professionnelle / Upskilling"],
+        "avantages": ["ÉNORME demande 2026", "1500-3000€/jour de formation", "Récurrence (nouvelles équipes)", "CPF/OPCO finançables"],
+        "inconvenients": ["Déplacements parfois", "Certification Qualiopi complexe", "Contenu à mettre à jour souvent"],
+        "etapes_demarrage": ["Créer programme 1-2 jours", "Partenariat organisme certifié Qualiopi", "Cibler DRH/Directions", "LinkedIn + cold email"],
+        "ressources": ["LinkedIn", "Organismes Qualiopi", "Supports formation"],
+        "warning": "Qualiopi indispensable pour financement entreprise. Passez par un partenaire."
     },
 
     # ============================================================
@@ -498,21 +576,21 @@ BUSINESS_MODELS = {
         "nom": "Vente de Templates/Thèmes",
         "categorie": "Tech",
         "description": "Création et vente de templates Notion, Figma, WordPress...",
-        "revenus_potentiels": "500 - 3 000€/mois",
-        "revenus_median": "1 200€/mois",
-        "temps_objectif_5k": "18-36 mois",
+        "revenus_potentiels": "300 - 2 000€/mois",
+        "revenus_median": "800€/mois",
+        "temps_objectif_5k": "24-48 mois",
         "capital_requis": "0 - 500€",
         "scalabilite": 4,
-        "realisme": 3,
+        "realisme": 2,
         "competences_requises": ["Design graphique/UI-UX"],
         "competences_bonus": ["Développement web/mobile", "Marketing digital/SEO/Ads"],
         "modele_revenu": "Vente de produits digitaux (formations, ebooks)",
         "type_client": "Les deux me conviennent",
         "lieu": ["100% à domicile/remote", "Nomade digital - depuis n'importe où"],
         "visibilite": ["Non - je veux un business anonyme/discret"],
-        "risque": 1,
+        "risque": 2,
         "avantages": ["Revenus passifs", "Création unique", "Pas de support lourd"],
-        "inconvenients": ["Concurrence forte", "Volume nécessaire", "Marketing requis"],
+        "inconvenients": ["Concurrence forte", "Volume nécessaire", "IA génère des templates 2026"],
         "etapes_demarrage": ["Niche template (Notion productivity, Figma UI kits)", "5-10 templates qualité", "Gumroad + Twitter", "SEO Notion/Figma"],
         "ressources": ["Gumroad", "Notion", "Figma Community"],
         "warning": "Marché saturé, différenciez-vous par la qualité"
@@ -549,21 +627,21 @@ BUSINESS_MODELS = {
         "nom": "Site de Niche SEO",
         "categorie": "Contenu",
         "description": "Site de contenu monétisé par affiliation/pubs",
-        "revenus_potentiels": "1 000 - 4 000€/mois",
-        "revenus_median": "1 500€/mois",
-        "temps_objectif_5k": "24-48 mois",
+        "revenus_potentiels": "800 - 3 000€/mois",
+        "revenus_median": "1 200€/mois",
+        "temps_objectif_5k": "30-48 mois",
         "capital_requis": "1 000 - 5 000€",
         "scalabilite": 4,
-        "realisme": 3,
+        "realisme": 2,
         "competences_requises": ["Rédaction/Copywriting", "Marketing digital/SEO/Ads"],
         "competences_bonus": [],
         "modele_revenu": "Affiliation/Commission",
         "type_client": "Pas de contact client direct (produits automatisés)",
         "lieu": ["100% à domicile/remote", "Nomade digital - depuis n'importe où"],
         "visibilite": ["Non - je veux un business anonyme/discret"],
-        "risque": 3,
+        "risque": 4,
         "avantages": ["Revenus passifs", "Asset vendable 30-40x mensuel", "Scalable avec rédacteurs"],
-        "inconvenients": ["SEO = 12-24 mois", "Google updates risque", "Investissement contenu"],
+        "inconvenients": ["SEO = 12-24 mois", "Google updates risque", "IA bouleverse le SEO 2026"],
         "etapes_demarrage": ["Niche avec affiliation rentable", "50-100 articles SEO", "Backlinks qualité", "Patience 18-24 mois"],
         "ressources": ["Ahrefs", "Semrush", "Ezoic"],
         "warning": "Premier euro après 6-12 mois minimum. Patience requise."
@@ -948,5 +1026,23 @@ FAST_TRACK_5K = [
     "agence_web",
     "automatisation_ia",
     "nettoyage_entreprises",
-    "renovation_bricolage"
+    "renovation_bricolage",
+    "formateur_ia_entreprise"
+]
+
+# === NOUVEAUX 2026 - Business les plus porteurs ===
+HOT_2026 = [
+    "automatisation_ia",         # Très forte demande
+    "agent_ia_builder",          # Marché explosif
+    "prompt_engineer",           # Window d'opportunité
+    "formateur_ia_entreprise",   # Demande énorme
+    "services_seniors",          # Démographie
+    "conciergerie_airbnb",       # LCD toujours porteur
+]
+
+# Business à éviter ou en déclin 2026
+DECLINING_2026 = [
+    "blogging_seo",              # IA change la donne SEO
+    "template_themes",           # IA génère des templates
+    "freelance_copywriter",      # Concurrence IA forte
 ]
