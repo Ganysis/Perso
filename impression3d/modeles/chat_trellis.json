@@ -13,7 +13,7 @@
   1,
   1
  ],
- "res": 0.3,
+ "res": 0.25,
  "aplatir": 1.2,
  "filaments": {
   "creme": [
@@ -173,14 +173,14 @@
    ],
    "espacement": 12.5,
    "taille": 0.55,
-   "rayon": 6.3,
-   "rayon_bout": 8.5,
+   "rayon": 6.5,
+   "rayon_bout": 9.0,
    "bout": 11,
    "sortie": 7.0,
-   "retrait": 7.0,
-   "largeur": 5.2,
-   "hauteur": 10.8,
-   "bout_r": 6.3,
+   "retrait": 7.2,
+   "largeur": 5.4,
+   "hauteur": 15.0,
+   "bout_r": 7.0,
    "debut": 0.0,
    "rayon_v": 18
   }

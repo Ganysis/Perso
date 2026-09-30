@@ -75,33 +75,7 @@ def solidifier(v, f, res, fermeture=3.3):
         tailles = ndimage.sum(plein, lab, range(1, nb + 1))
         plein = lab == (1 + int(np.argmax(tailles)))
     sdf = (ndimage.distance_transform_edt(~plein) - ndimage.distance_transform_edt(plein)) * res
-    sdf = ndimage.gaussian_filter(sdf.astype(np.float32), 0.8)
-    # près de la surface : distance exacte aux triangles d'origine (surface
-    # lisse, sans marches de voxels). Seules les faces proches du bord final
-    # comptent (pas les parois intérieures du modèle creux) ; les composantes
-    # fermées à l'envers (ex. sphères des yeux) sont retournées d'abord.
-    import igl
-    mm = trimesh.Trimesh(v, f, process=True)
-    parts = mm.split(only_watertight=False)
-    for p in parts:
-        if p.is_watertight and p.volume < 0:
-            p.invert()
-    mm = trimesh.util.concatenate(parts)
-    cen = mm.triangles_center
-    ic = np.clip(np.floor((cen - lo) / res + 0.5).astype(int), 0, np.array(shape) - 1)
-    keep = np.abs(sdf[ic[:, 0], ic[:, 1], ic[:, 2]]) < 1.2
-    V = np.asarray(mm.vertices, np.float64)
-    F = np.asarray(mm.faces[keep], np.int64)
-    Nf = mm.face_normals[keep]
-    band = np.argwhere(np.abs(sdf) < 1.5)
-    P = band * res + lo
-    d2, I, Cp = igl.point_mesh_squared_distance(P, V, F)
-    dist = np.sqrt(d2)
-    sg_n = np.sign(np.einsum("ij,ij->i", P - Cp, Nf[I]))
-    sg_v = np.sign(sdf[band[:, 0], band[:, 1], band[:, 2]])
-    sg = np.where((dist < 0.6) & (sg_n != 0), sg_n, sg_v)
-    sdf[band[:, 0], band[:, 1], band[:, 2]] = (sg * dist).astype(np.float32)
-    sdf = ndimage.gaussian_filter(sdf, 0.4)
+    sdf = ndimage.gaussian_filter(sdf.astype(np.float32), 1.0)
     return sdf, lo
 
 

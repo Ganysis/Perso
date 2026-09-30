@@ -80,7 +80,7 @@ def remplacer_queue(sdf, lo, res, Q, s, q, fmt):
     # 1) retrait (au-delà du point de sortie du corps)
     ramp = np.clip((sc - q["sortie"]) / 3.0, 0, 1).astype(np.float32)
     carve = np.where(ramp > 0, (q["retrait"] - d) * ramp - (1 - ramp) * 5, -50).astype(np.float32)
-    out = smax(sdf, carve[:, :, None], 1.0).astype(np.float32)
+    out = smax(sdf, carve[:, :, None], 2.5).astype(np.float32)
     # 2) nouvelle queue (profil rond à fond plat, bout en boule)
     hw, top, rb = q["largeur"], q["hauteur"], q["bout_r"]
     cols = np.argwhere(d < max(hw, rb) + 4)
