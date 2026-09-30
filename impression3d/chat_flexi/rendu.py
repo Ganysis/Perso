@@ -1,20 +1,26 @@
 """Rendu d'aperçu (PNG) du chat avec un petit rasteriseur z-buffer."""
 import numpy as np
 from PIL import Image, ImageDraw
-from chat_flexi import build, JOINTS
+from chat_flexi import build, JOINTS, COLORS
 
 J = [j.x for j in JOINTS]
-COLORS = [(255, 176, 120), (255, 204, 150)]
 
 
-def posed(parts, angles):
-    out = [parts[0]]
-    for i in range(1, len(parts)):
-        m = parts[i]
-        for k in range(i - 1, -1, -1):
-            x = J[k]
-            m = m.translate([-x, 0, 0]).rotate([0, 0, angles[k]]).translate([x, 0, 0])
-        out.append(m)
+def colored(segs):
+    """Liste (Manifold, couleur) à partir des segments."""
+    return [[(m, COLORS[k]) for k, m in s.items() if k in COLORS] for s in segs]
+
+
+def posed(segs, angles):
+    out = [segs[0]]
+    for i in range(1, len(segs)):
+        items = []
+        for m, col in segs[i]:
+            for k in range(i - 1, -1, -1):
+                x = J[k]
+                m = m.translate([-x, 0, 0]).rotate([0, 0, angles[k]]).translate([x, 0, 0])
+            items.append((m, col))
+        out.append(items)
     return out
 
 
@@ -27,14 +33,15 @@ def render(parts, elev, azim, size=(900, 600), zoom=1.0, center=None):
     up = np.cross(right, fwd)
     tris, cols = [], []
     light = -fwd + np.array([0.3, -0.4, 0.6]); light /= np.linalg.norm(light)
-    for i, m in enumerate(parts):
+    flat = [it for seg in parts for it in seg]
+    for m, color in flat:
         mesh = m.to_mesh()
         v = np.asarray(mesh.vert_properties)[:, :3]
         t = v[np.asarray(mesh.tri_verts)]
         n = np.cross(t[:, 1] - t[:, 0], t[:, 2] - t[:, 0])
         n /= np.linalg.norm(n, axis=1, keepdims=True) + 1e-12
-        sh = 0.35 + 0.65 * np.clip(n @ light, 0, 1)
-        tris.append(t); cols.append(sh[:, None] * np.array(COLORS[i % 2]))
+        sh = 0.45 + 0.6 * np.clip(n @ light, 0, 1)
+        tris.append(t); cols.append(sh[:, None] * np.array(color))
     T = np.vstack(tris); Cc = np.vstack(cols)
     P = np.stack([T @ right, T @ up, T @ fwd], axis=-1)
     allp = P.reshape(-1, 3)
@@ -70,13 +77,13 @@ def render(parts, elev, azim, size=(900, 600), zoom=1.0, center=None):
 
 
 if __name__ == "__main__":
-    parts = build()
-    wave = posed(parts, [12, -18, -20, 20, 22, 22, 22])
+    segs = colored(build())
+    wave = posed(segs, [14, -16, -18, 22, 24, 24, 24])
     views = [
-        ("Vue de dessus (pose d'impression)", render(parts, 75, -90)),
-        ("Vue 3D", render(parts, 35, -120)),
-        ("Articule : ca gigote !", render(wave, 75, -90)),
-        ("Zoom tete", render(parts[:3], 70, -90, zoom=1.0)),
+        ("3/4 avant", render(segs, 22, 35)),
+        ("Profil", render(segs, 8, 90)),
+        ("Articule : ca gigote !", render(wave, 70, -90)),
+        ("Face", render(segs[:2], 8, 0, zoom=1.0)),
     ]
     W, Hh = 900, 600
     sheet = Image.new("RGB", (W * 2, (Hh + 40) * 2), "white")
