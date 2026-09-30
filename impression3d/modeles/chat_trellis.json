@@ -1,0 +1,188 @@
+{
+ "nom": "chat_pelote",
+ "glb": "chat_trellis.glb",
+ "source": "Image générée puis convertie en 3D avec TRELLIS.2 (Microsoft, licence MIT)",
+ "longueur": 85,
+ "axes": [
+  2,
+  0,
+  1
+ ],
+ "signes": [
+  1,
+  1,
+  1
+ ],
+ "res": 0.3,
+ "aplatir": 1.2,
+ "filaments": {
+  "creme": [
+   236,
+   214,
+   184
+  ],
+  "noir": [
+   30,
+   26,
+   24
+  ],
+  "rose": [
+   250,
+   150,
+   170
+  ],
+  "blanc": [
+   252,
+   252,
+   250
+  ]
+ },
+ "regles": [
+  [
+   "noir",
+   "L < 90",
+   "noir",
+   2
+  ],
+  [
+   "rose",
+   "((r - g) > 30) & ((r - b) > 45) & (g < 200)",
+   "rose",
+   3
+  ],
+  [
+   "blanc",
+   "(L > 226) & (sat < 40)",
+   "blanc",
+   4
+  ]
+ ],
+ "symetries": [
+  {
+   "ref": "noir",
+   "cible": "rose",
+   "zmin": 25
+  }
+ ],
+ "pivot": {
+  "x": 2.0,
+  "y": -13.0,
+  "format": "mini",
+  "couloir": [
+   [
+    -60,
+    -60
+   ],
+   [
+    70,
+    -60
+   ],
+   [
+    70,
+    13.5
+   ],
+   [
+    -60,
+    13.5
+   ]
+  ]
+ },
+ "flexi": {
+  "format": "mini",
+  "cou": {
+   "x": 2.0,
+   "y": -13.0,
+   "taille": 0.78
+  },
+  "couloir_tete": [
+   [
+    -60,
+    -60
+   ],
+   [
+    70,
+    -60
+   ],
+   [
+    70,
+    13.5
+   ],
+   [
+    -60,
+    13.5
+   ]
+  ],
+  "queue": {
+   "chemin": [
+    [
+     -31,
+     11
+    ],
+    [
+     -37.5,
+     15
+    ],
+    [
+     -39,
+     20
+    ],
+    [
+     -37,
+     23.3
+    ],
+    [
+     -33,
+     30
+    ],
+    [
+     -22,
+     35.4
+    ],
+    [
+     -10,
+     35.1
+    ],
+    [
+     2,
+     34.3
+    ],
+    [
+     9.3,
+     31.8
+    ],
+    [
+     16.3,
+     27.9
+    ],
+    [
+     23.1,
+     23.7
+    ],
+    [
+     30.5,
+     25.3
+    ],
+    [
+     37,
+     27
+    ],
+    [
+     41,
+     28
+    ]
+   ],
+   "espacement": 12.5,
+   "taille": 0.55,
+   "rayon": 6.3,
+   "rayon_bout": 8.5,
+   "bout": 11,
+   "sortie": 7.0,
+   "retrait": 7.0,
+   "largeur": 5.2,
+   "hauteur": 10.8,
+   "bout_r": 6.3,
+   "debut": 0.0,
+   "rayon_v": 18
+  }
+ }
+}
